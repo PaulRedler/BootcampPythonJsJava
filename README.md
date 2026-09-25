@@ -12,3 +12,14 @@ Le compteur permet de ne pas avoir les libellés dans le dictionnaire en premier
 troisieme exercice python:
 
 on ecrit dans le document dont le chemin est passé en parametre avec la fonction open(w). Ensuite pour chaques lignes on assigne la valeur de la clé correspondante à une variable. Ces variables sont concaténées et écrites dans le fichier. Petite subtilité pour le temps qu'on assigne à vide si la fonction ecrite précédemment renvoie None.
+
+
+premier exercice java : 
+
+Le bareme étant ordonné de façon décroissante, la position correspont donc a l'index de la valeur +1.
+
+deuxieme exercice java:
+
+afin d'eviter deux creer deux resultats avec le meme pilote, on regarde tout d'abord si il n'y en a pas deja un dans la collection avec le nom de la ligne courante.
+on lui incremente ensuite son nombre de victoire, deuxieme place et on utilise la fonction crée precedemment pour incrementer son nombre de point.
+Pour ordonner la collection on utilise un stream et les fonctions sorted et thenComparing de façon decroissante appart pour les noms.
