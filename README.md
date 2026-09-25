@@ -23,3 +23,13 @@ deuxieme exercice java:
 afin d'eviter deux creer deux resultats avec le meme pilote, on regarde tout d'abord si il n'y en a pas deja un dans la collection avec le nom de la ligne courante.
 on lui incremente ensuite son nombre de victoire, deuxieme place et on utilise la fonction crée precedemment pour incrementer son nombre de point.
 Pour ordonner la collection on utilise un stream et les fonctions sorted et thenComparing de façon decroissante appart pour les noms.
+
+premier exercice js 
+
+on parcout le tableau en parametre pour ajouter ses elements un par un dans un nouveau tableau, ensuite on applique un algorithme de tri a bulle decroissant sur le nouveau tableau
+
+
+
+deuxieme exercice js:
+
+on recupere l'element tableau via l'id en parametre puis on efface son contenu en mettant a vide son html. ensuite pour chaques lignes du tableau reçu en parametre on cree une ligne dans le tableau , chaques lignes a comme attribut un data-nom = au nom du pilote
