@@ -8,7 +8,8 @@
    ========================================================================= */
 
 import java.util.List;
-
+import java.util.ArrayList;
+import java.util.Comparator;
 public class Classement {
 
     /** Barème officiel des dix premiers. FOURNI — NE PAS MODIFIER. */
@@ -32,8 +33,31 @@ public class Classement {
     //    ses victoires (position 1) et ses 2e places, trié par :
     //    points décroissants, puis victoires, puis 2e places, puis nom (A→Z).
     public static List<Resultat> classementPilotes(List<Ligne> lignes) {
-        // À COMPLÉTER
-        return null;
+    	List<Resultat> resultats = new ArrayList<Resultat>();
+    	for (Ligne l : lignes)
+        {
+    		Resultat resultat = resultats.stream().filter(r->r.nom == l.pilote() && r.ecurie==l.ecurie()).findFirst().orElse(new Resultat(l.pilote(), l.ecurie()));
+    		if(l.position()==1)
+    		{
+    			resultat.victoires+=1;	
+    		}
+    		if(l.position()==2)
+    		{
+    			resultat.deuxiemes+=1;
+    		}
+        	resultats.add(resultat);
+
+        }
+    		resultats = resultats.stream()
+    		.sorted(
+    		Comparator.comparing((Resultat r) -> r.points).reversed()
+    		.thenComparing(Comparator.comparing((Resultat r) -> r.victoires).reversed())
+    		.thenComparing(Comparator.comparing((Resultat r) -> r.deuxiemes).reversed())
+    		.thenComparing(r -> r.nom))
+    		.toList();
+        
+        
+        return resultats;
     }
 
     // 3. classementEcuries(pilotes) : additionne les points, victoires et
